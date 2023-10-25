@@ -1,6 +1,19 @@
-const Button = ({ label, iconURL }) => {
+const Button = ({
+  label,
+  iconURL,
+  backgroundColor,
+  textColor,
+  borderColor,
+}) => {
   return (
-    <button className="flex justify-center items-center gap-2 px-7 py-4 border border-coral-red font-montserrat text-lg leading-none rounded-full text-white bg-coral-red">
+    <button
+      className={`flex justify-center items-center gap-2 px-7 py-4 border font-montserrat text-lg leading-none
+      ${
+        backgroundColor
+          ? `${backgroundColor} ${textColor} ${borderColor}`
+          : "bg-coral-red text-white border-coral-red"
+      } rounded-full`}
+    >
       {label}
       {iconURL && (
         <img
